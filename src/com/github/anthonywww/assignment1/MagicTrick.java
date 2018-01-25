@@ -35,8 +35,7 @@ public class MagicTrick {
 		magicNumber /= 6;
 		
 		// Print result
-		System.out.print("Here is the final result, which should be three: ");
-		System.out.println(magicNumber);
+		System.out.printf("Here is the final result, which should be three: %d", magicNumber);
 	}
 	
 	

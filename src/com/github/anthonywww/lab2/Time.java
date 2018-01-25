@@ -5,7 +5,7 @@ import java.util.Calendar;
 /**
  * Testing string concatenation part 2
  *
- * @author Anthony Waldsmith
+ * @author Anthony Waldsmith https://github.com/anthonywww
  * @version 1/24/2018
  */
 public class Time {

@@ -3,7 +3,7 @@ package com.github.anthonywww.lab1;
 /**
  * Hello World Java test program
  *
- * @author Anthony Waldsmith
+ * @author Anthony Waldsmith https://github.com/anthonywww
  * @version 1/23/2018
  */
 public class Hello {

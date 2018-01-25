@@ -3,7 +3,7 @@ package com.github.anthonywww.assignment1;
 /**
  * Hello World Java test program
  *
- * @author Anthony Waldsmith
+ * @author Anthony Waldsmith https://github.com/anthonywww
  * @version 1/25/2018
  */
 public class MagicTrick {
@@ -35,6 +35,7 @@ public class MagicTrick {
 		magicNumber /= 6;
 		
 		// Print result
+		System.out.print("Here is the final result, which should be three: ");
 		System.out.println(magicNumber);
 	}
 	

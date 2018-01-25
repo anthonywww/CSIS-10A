@@ -3,7 +3,7 @@ package com.github.anthonywww.lab2;
 /**
  * Testing string concatenation
  *
- * @author Anthony Waldsmith
+ * @author Anthony Waldsmith https://github.com/anthonywww
  * @version 1/24/2018
  */
 public class Date {

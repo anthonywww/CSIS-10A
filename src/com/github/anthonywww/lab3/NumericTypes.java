@@ -1,5 +1,11 @@
 package com.github.anthonywww.lab3;
 
+/**
+ * Conversion and math examples
+ *
+ * @author Anthony Waldsmith https://github.com/anthonywww
+ * @version 1/29/2018
+ */
 public class NumericTypes {
 
 	public static void main(String[] args) {

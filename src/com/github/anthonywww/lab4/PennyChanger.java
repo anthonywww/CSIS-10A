@@ -11,7 +11,7 @@ public class PennyChanger {
 	public static void main(String[] args) {
 		int pennies, leftover_pennies, quarters, dimes, nickels;
 
-		pennies = 116;
+		pennies = 216;
 
 		System.out.println("We are going to convert " + pennies + " cents into");
 		System.out.println("quarters, dimes, nickels, and leftover pennies...\n\n");
@@ -26,12 +26,12 @@ public class PennyChanger {
 		// find how many dimes are in leftover_pennies
 		dimes = 0;
 		dimes = leftover_pennies / 10;
-		leftover_pennies = pennies % 10;
+		leftover_pennies %= 10;
 
 		// find how many nickels are in leftover_pennies
 		nickels = 0;
 		nickels = leftover_pennies / 5;
-		leftover_pennies = pennies % 5;
+		leftover_pennies %= 5;
 
 		System.out.println("You now have " + quarters + " quarters, " + dimes + " dimes, ");
 		System.out.println(nickels + " nickels, " + leftover_pennies + " pennies. Same amount? ");

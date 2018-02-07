@@ -37,7 +37,7 @@ public class Shipping {
 			cost += Math.pow(size, 0.3333);
 		}
 		
-		System.out.printf("weight = %d, size = %d, cost = $%.2f\n", weight, size, cost);
+		System.out.printf("weight = %d, size = %d, cost = $%.2f\n", weight, size,   cost);
 	}
 	
 }

@@ -1,11 +1,6 @@
 package com.github.anthonywww.assignment3;
 
-/**
- * Drills class
- *
- * @author Anthony Waldsmith https://github.com/anthonywww
- * @version 2/1/2018
- */
+ 
 public class Drills {
 
 	public static void main(String[] args) {

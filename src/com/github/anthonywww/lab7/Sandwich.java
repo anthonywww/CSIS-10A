@@ -91,7 +91,7 @@ public class Sandwich {
 	
 	private static void printSign() {
 		final StringBuilder sb = new StringBuilder();
-		final String title = "Prof. Segal's Hamburger Palace";
+		final String title = "Prof. Seagal's Hamburger Palace";
 		final char character = '*';
 		
 		for (int i=0;i<12;i++) {

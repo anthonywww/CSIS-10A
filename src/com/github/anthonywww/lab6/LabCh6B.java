@@ -9,6 +9,7 @@ package com.github.anthonywww.lab6;
 public class LabCh6B {
 
 	public static void main(String[] args) {
+		
 		// Type in the definition of the prod method where indicated
 		// below main and execute it.
 		// Does it perform the way you predicted?

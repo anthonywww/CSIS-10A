@@ -3,7 +3,7 @@ package com.github.anthonywww.lab7;
 import java.util.Scanner;
 
 /**
- * "Dr. Kow's Hamburger Palace"
+ * Checkout stand
  *
  * @author Anthony Waldsmith https://github.com/anthonywww
  * @version 3/3/2018

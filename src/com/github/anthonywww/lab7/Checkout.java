@@ -15,7 +15,7 @@ public class Checkout {
 	public static void main(String[] args) {
 		
 		checkout();
-		
+		keyboard.close();
 	}
 	
 	private static void checkout() {
@@ -65,9 +65,5 @@ public class Checkout {
 		
 		System.out.printf("Your total with 6 percent sales tax is $%1.2f\n", cost);
 	}
-	
-	
-	
-	
 	
 }

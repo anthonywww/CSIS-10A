@@ -14,6 +14,19 @@ public class Checkout {
 	
 	public static void main(String[] args) {
 		
+		int sum = 0;
+		int k = 0;
+		int num; // JVM initializes this to 0
+
+		while (k < 5) {
+			num = keyboard.nextInt(); // 1, 2, 3, 4
+			sum += num;
+			k += 1;
+		}
+
+		System.out.println("sum " + sum);
+		System.out.println("avg " + sum / 5.0);
+		
 		checkout();
 		keyboard.close();
 	}

@@ -23,8 +23,10 @@ import info.gridworld.grid.Location;
 import java.awt.Color;
 
 /**
- * This class runs a world that contains box bugs. <br />
- * This class is not tested on the AP CS A and AB exams.
+ * Circle bug entry-point
+ *
+ * @author Anthony Waldsmith https://github.com/anthonywww
+ * @version 04/01/2018
  */
 public class CircleBugRunner {
 	

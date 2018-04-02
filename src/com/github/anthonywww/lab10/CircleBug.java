@@ -1,5 +1,11 @@
 package com.github.anthonywww.lab10;
 
+/**
+ * Circle bug pattern
+ *
+ * @author Anthony Waldsmith https://github.com/anthonywww
+ * @version 04/01/2018
+ */
 public class CircleBug extends PatternBug {
 	
 	public CircleBug(int sideLength) {

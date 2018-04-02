@@ -17,8 +17,6 @@ public class PartA {
 
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		
-		System.out.println("\f");
 
 		// 9.1 CREATING AN OBJECT VARIABLE AND A NEW OBJECT
 		// In Java, a point is represented by a Point object.
@@ -116,6 +114,7 @@ public class PartA {
 						// and will be removed from memory
 		blank = new Point(5, 6); // Now blank refers to a different Point object
 									// that has just been created by new
+		
 	}
 
 	public static void printPoint(Point p) {

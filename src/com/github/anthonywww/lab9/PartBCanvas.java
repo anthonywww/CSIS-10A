@@ -46,6 +46,7 @@ public class PartBCanvas extends Canvas { // PartBCanvas is a kind of Canvas
 	}
 
 	public void paint(Graphics g) {
+		/*
 		// draw a line
 		g.drawLine(10, 20, 100, 200); // from (10,20) to (100,200)
 
@@ -67,18 +68,20 @@ public class PartBCanvas extends Canvas { // PartBCanvas is a kind of Canvas
 		// move rectangle
 		box.translate(30, 0);
 		draw(g, box); // use a homemade method to save typing
-
+		 */
 		// use a loop to draw a row of 10 red balls, translate 40 between balls
 
 		// use a nested loop to draw a 10 by 10 grid of red balls
 
 		// make a polygon and draw it
+		/*
 		Polygon p = new Polygon();
 		p.addPoint(10, 20);
 		p.addPoint(10, 40);
 		p.addPoint(50, 60);
 		g.setColor(Color.blue);
 		g.drawPolygon(p);
+		*/
 
 		// write a method that takes a Graphics g and a Rectangle object
 		// and draws an X connecting the corners of the rectangle
@@ -86,6 +89,19 @@ public class PartBCanvas extends Canvas { // PartBCanvas is a kind of Canvas
 		//
 		// g.setColor(Color.violet);
 		// crissCross(g, box);
+		
+		
+		g.setColor(Color.black);
+		g.fillOval(100, 100, 200, 200);
+		g.setColor(Color.white);
+		g.fillOval(150, 150, 100, 100);
+		g.drawLine(0,0,400,400);
+		g.drawLine(400,0,0,400);
+		Polygon shape = new Polygon();
+		shape.addPoint(0,0); 
+		shape.addPoint(100, 0); 
+		shape.addPoint(50, 50); 
+		g.drawPolygon(shape);
 
 	}
 

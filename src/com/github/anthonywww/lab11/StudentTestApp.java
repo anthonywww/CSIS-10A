@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class StudentTestApp
 {
-    public static void main(String [] args){
+    public static void main(String[] args){
         System.out.println("\f");  // start with blank screen
         
         // BEFORE BEGINNING, add the SET methods to the Student class
@@ -113,7 +113,7 @@ public class StudentTestApp
         //   more than 50 units and has a GPA larger than 3.5.
         
         // test your method by running the statements here
-        Student studysAlot = new Student("Draper","Charlene",55,4.0);
+        Student studysAlot = new Student("Draper","Charlene", 55,4.0);
         Student workingAtIt = new Student("Princeton","Gointa",30,3.3);
         
         if (scholarshipWinner(studysAlot)){

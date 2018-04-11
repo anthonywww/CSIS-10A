@@ -13,8 +13,8 @@ public class DateTestApp {
 	
 	public static void main(String[] args) {
 
-		Date d = new Date();
-		System.out.println("d = " + d.month + "/" + d.day + "/" + d.year);
+		//Date d = new Date();
+		//System.out.println("d = " + d.month + "/" + d.day + "/" + d.year);
 		
 		
         // Define the "No-Arg" (Default) Constructor in the Date class to set
@@ -30,13 +30,13 @@ public class DateTestApp {
         // create a new Date object initialized to the date of your birth 
         //  and store a reference to it in variable birthday 
         //  then print out the values in your birthday object
-        Date d2 = new Date(6, 30, 1998);
-        System.out.printf("d2 = %d/%d/%d\n", d2.month, d2.day, d2.year);
+        //Date d2 = new Date(6, 30, 1998);
+        //System.out.printf("d2 = %d/%d/%d\n", d2.month, d2.day, d2.year);
 		
         // create a new Date object for an upcoming holiday
         //  and print it
-        Date d3 = new Date(12, 25, 2018);
-        System.out.printf("d3 = %d/%d/%d\n", d3.month, d3.day, d3.year);
+        //Date d3 = new Date(12, 25, 2018);
+        //System.out.printf("d3 = %d/%d/%d\n", d3.month, d3.day, d3.year);
              
         //**************** end Problem 3 *****************/
         

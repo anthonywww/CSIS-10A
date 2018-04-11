@@ -2,7 +2,7 @@ package com.github.anthonywww.lab11;
 
 public class Date {
 
-	public int year, month, day;
+	private int year, month, day;
 
 	public Date() {
 		// Calendar cal = Calendar.getInstance();

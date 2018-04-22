@@ -30,9 +30,9 @@ public class DancingBugRunner {
 		DancingBug ant = new DancingBug(turns);
 		DancingBug emily = new DancingBug(turns);
 		
-		world.add(new Location(7, 8), alice);
-		world.add(new Location(5, 5), bob);
-		world.add(new Location(4, 4), ant);
+		world.add(new Location(3, 8), alice);
+		world.add(new Location(3, 5), bob);
+		world.add(new Location(3, 4), ant);
 		world.add(new Location(3, 3), emily);
 		
 		

@@ -93,8 +93,6 @@ public class BattleBug extends Bug {
 	@Override
 	public void act() {
 		
-		System.err.println(Location.EAST);
-		
 		if (flowers > winFlower) {
 			this.setColor(new Color(0, 255, 0));
 			return;
@@ -108,15 +106,7 @@ public class BattleBug extends Bug {
 
 		System.err.printf("Bug = col(%d), row(%d), direction(%s) neighbors(%d)\n", loc.getCol(), loc.getRow(), loc.toString(), neighbors.size());
 
-		if (neighbors.size() == 0) {
-			this.setDirection(randDirection);
-		}
-
-		do {
-			this.turn();
-		} while (!this.canMove());
-
-		for (int i = 0; i < neighbors.size() && this.canMove(); i++) {
+		for (int i = 0; i < neighbors.size(); i++) {
 			Actor actor = neighbors.get(i);
 			if (actor == null) {
 				continue;
@@ -128,13 +118,21 @@ public class BattleBug extends Bug {
 			if (actor instanceof Flower) {
 				// we found a Flower
 				int direction = direction(loc, actor.getLocation());
+				System.err.println("Flower direction: " + direction);
 				setDirection(direction);
 				break;
 			}
 		}
-
+		
+		if (neighbors.size() == 0) {
+			System.err.println("Setting random direction");
+			this.setDirection(randDirection);
+		}
+		
 		if (this.canMove()) {
 			this.move();
+		} else {
+			this.turn();
 		}
 
 //		

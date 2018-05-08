@@ -91,14 +91,14 @@ public class BlackJackGame {
 			computerScore = score(computerHand, computerCount);
 			
 			// print the computerScore
-			System.out.println("Computer score = " + playerScore);
+			System.out.println("Computer score = " + computerScore);
 		}
 
 		// g) determine and print the outcome of the game
 		// based on playerScore and computerScore
 		if ((playerScore > 21 && computerScore > 21) || (playerScore == computerScore)) {
-			System.out.println("Tie");
-		} else if (playerScore > computerScore) {
+			System.out.println("Bust- Tie!");
+		} else if ((playerScore > computerScore) && playerScore <= 21) {
 			System.out.println("Player won!");
 		} else {
 			System.out.println("Computer won!");
@@ -133,7 +133,6 @@ public class BlackJackGame {
 		}
 
 		sc.close();
-
 	}
 
 	public static Card deal(Card[] deck) {

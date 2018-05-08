@@ -1,6 +1,7 @@
-package com.github.anthonywww.assignment13;
+package com.github.anthonywww.assignment16;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -12,21 +13,19 @@ import java.util.Scanner;
 public class ScrabbleGame {
 
 	public static void main(String[] args) throws FileNotFoundException {
-
 		Scanner keyboard = new Scanner(System.in);
-		Tile[] letterBag = new Tile[99];
+		ArrayList<Tile> letterBag = new ArrayList<Tile>();
 
 		// a) finish the fillBag method below main. This method fills the letterBag
 		// with info for 99 tiles read from tiles.txt
-		// fillBag(letterBag);
 		fillBag(letterBag);
-		System.out.println("The first letter in letterBag is " + letterBag[0]);
-		System.out.println("The last letter in letterBag is " + letterBag[98]);
+		System.out.println("The first letter in letterBag is " + letterBag.get(0));
+		System.out.println("The last letter in letterBag is " + letterBag.get(98));
 
 		// b) finish the makeRack method below main. This method creates a rack of
 		// 7 tiles and assigns them 7 random tiles from letterBag
-		Tile[] player1rack = makeRack(letterBag);
-		Tile[] player2rack = makeRack(letterBag);
+		ArrayList<Tile> player1rack = makeRack(letterBag);
+		ArrayList<Tile> player2rack = makeRack(letterBag);
 
 		// c) add the printAllTiles method below main
 		System.out.print("player 1 rack = ");
@@ -56,43 +55,45 @@ public class ScrabbleGame {
 		} else {
 			System.out.println("the word you chose doesn't work with your rack");
 		}
-		
 		keyboard.close();
 	}
 
-	public static void fillBag(Tile[] tiles) throws FileNotFoundException {
+	public static void fillBag(ArrayList<Tile> tiles) throws FileNotFoundException {
+		// this method is almost identical to the makeDeck method in BlackJackGame
 		Scanner sc = new Scanner(ScrabbleGame.class.getResourceAsStream("tiles.txt"));
-
-		int k = 0;
-		while (k < tiles.length && sc.hasNext()) {
+		
+		while (sc.hasNext()) {
 			char letter = sc.next().charAt(0);
 			int value = sc.nextInt();
 
-			tiles[k] = new Tile(letter, value);
-			k++;
+			if (tiles.size() > 99) {
+				break;
+			}
+
+			tiles.add(new Tile(letter, value));
 		}
 
 		sc.close();
 	}
 
-	public static Tile[] makeRack(Tile[] tileBag) throws FileNotFoundException {
+	public static ArrayList<Tile> makeRack(ArrayList<Tile> tileBag) throws FileNotFoundException {
 		// create a Tile array called rack that can hold 7 tiles
-		Tile[] rack = new Tile[7];
+		ArrayList<Tile> rack = new ArrayList<Tile>();
 		// make a for loop that starts with int k=0 and repeats 7 times
-
-		for (int i = 0; i < 7; i++) {
-			// use the randomInt method to make a
-			// random index from 0 - 99 (exclusive)
-
-			// store the tile at that random index in tileBag
-			// in position k of the rack
-
-			// after the for loop, return your filled rack of tiles;
-			int index = randomInt(0, tileBag.length - 1);
-			rack[i] = tileBag[index];
+		
+		for (int k=0;k<7;k++) {
+			rack.add(tileBag.get(randomInt(0, 99)));
 		}
+		// use the randomInt method to make a
+		// random index from 0 - 99 (exclusive)
 
+		// store the tile at that random index in tileBag
+		// in position k of the rack
+
+		// after the for loop, return your filled rack of tiles;
+		
 		return rack;
+		//return null; // delete after completing the above
 	}
 
 	public static int randomInt(int low, int high) {
@@ -104,24 +105,20 @@ public class ScrabbleGame {
 
 	}
 
-	public static void printAllTiles(Tile[] tiles) {
-		for (int k = 0; k < tiles.length; k++)
-			System.out.print(tiles[k] + " ");
+	public static void printAllTiles(ArrayList<Tile> tiles) {
+		for (int k = 0; k < tiles.size(); k++)
+			System.out.print(tiles.get(k) + " ");
 		System.out.println();// go to new line
 	}
 
-	public static boolean validWord(String word, Tile[] rack) {
+	public static boolean validWord(String word, ArrayList<Tile> rack) {
 		// first make a countLetters method below this method
 		// that takes a char and a String and returns the number
 		// of times the char value appears in the String.
 		// See exercise 20 in assessment 8 for a solution to countLetters.
 
-		String rackString = "";
 		// then, make a String, rackString, which has all the letters
 		// in the rack
-		for (Tile t : rack) {
-			rackString = rackString + t.getLetter();
-		}
 
 		// then, make a for loop that goes through all the letters in
 		// String word
@@ -130,46 +127,35 @@ public class ScrabbleGame {
 		// than the same letter in rackString, return false
 
 		// after your for loop finishes, return true--you got through
-		// the loop without leaving, so there must be enough letters
+		// the loop withouth leaving, so there must be enough letters
 		// in rack to allow you to choose word
 
 		return true; // remove after completing above
 	}
 
-	@SuppressWarnings("unused")
-	private static int countLetters(char letter, String text) {
-		int count = 0;
-
-		for (char c : text.toCharArray()) {
-			if (letter == c) {
-				count++;
-			}
-		}
-		
-		return count;
-	}
-
-	public static int scoreWord(String word, Tile[] rack) {
+	public static int scoreWord(String word, ArrayList<Tile> rack) {
 		int score = 0;
-
 		// a for loop that steps k to access every letter of word
-		for (int k = 0; k < word.length(); k++) {
+		for (int k=0; k < word.length(); k++) {
 			// add to score the scoreOfLetter of word.charAt(k) in the rack
 			score += scoreOfLetter(word.charAt(k), rack); // fix this so it does the above
 		}
-
 		return score;
 	}
 
-	public static int scoreOfLetter(char letter, Tile[] rack) {
-		// write a for loop that steps k to access every Tile of rack
-
-		for (int k = 0; k < rack.length; k++) {
-			if (letter == rack[k].getLetter()) {
-				return rack[k].getValue();
+	public static int scoreOfLetter(char letter, ArrayList<Tile> rack) {
+		for (int i=0;i<rack.size();i++) {
+			if (letter == rack.get(i).getLetter()) {
+				return rack.get(i).getValue();
 			}
 		}
+		// write a for loop that steps k to access every Tile of rack
 
-		return -1000;
+		// if the letter matches the letter in the Tile at location k in the rack
+
+		// return the value of the Tile in the rack at location k
+
+		return -1000; // after the loop, if we didn't find the letter,
+						// something is wrong -- invalid word, so return -1000
 	}
 }
